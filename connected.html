@@ -1,0 +1,150 @@
+<html>
+<head>
+ <title>Starter Template for Bootstrap</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/starter-template.css" rel="stylesheet">
+</head>
+<body>
+    <div id="fb-root"></div>
+<script>
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length - 1);
+    }
+  }
+  return "";
+}
+  
+</script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=410591409756609"></script>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '410591409756609',
+      xfbml      : true,
+      version    : 'v3.3'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+ 
+  var currentuser = getCookie('mgmmallusername');
+  //alert("(" + currentuser.length + ")");
+   if ( currentuser.length === 0 )  {
+      //alert('here');
+      window.location.href = "http://localhost:5000/login";
+   }
+  
+  document.getElementById("demouser").innerHTML = getCookie('mgmmallusername');
+ 
+</script>
+<script>
+  
+    // Load the SDK asynchronously
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+function hideLogin() {
+  var x = document.getElementById("login1");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}  
+
+  function logout() {
+   var cookies = document.cookie.split(";");
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + '=;' +
+            'expires=Thu, 01-Jan-1970 00:00:01 GMT;' +
+            'path=' + '/;' +
+            'domain=' + window.location.host + ';' +
+            'secure=;';
+    }
+      window.location.href = "http://localhost:5000/login";
+  }
+  </script>
+  
+<div>
+    
+<nav class="navbar navbar-default" role="navigation" style="padding-left:130px;">
+ <div class="container-fluid">
+ <div class="navbar-header">
+      <a class="navbar-brand" href="#">MGM Vegan ToGo </a>
+    </div>
+       <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
+      <li><a href="/about">About us</a></li>
+      
+    </ul>
+    <ul class="nav navbar-nav navbar-right" >
+    <li><div id="demouser">
+    </div> <span class="link" onclick="javascript:logout();">Sign Out</span> || </li>
+    </ul>
+   
+</nav>
+</div>
+<br/>
+<div class="jumbotron"> <p>
+<div id="demouser"> </div></li>
+This is place to Logged in website and place some links for navigation.
+</p></div>
+  
+  <div id="status">
+    
+  </div>
+  
+  <hr/>
+  <script>
+
+  document.getElementById("demouser").innerHTML = getCookie('mgmmallusername');
+  </script>
+  
+  <div id="demouser"> </div></li>
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+   <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/bootstrap/jquery-3.1.1.slim.min.js" "></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="bootstrap/tether.min.js" ></script>
+    <script src="/bootstrap/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./Starter Template for Bootstrap_files/ie10-viewport-bug-workaround.js"></script>
+  
+</body>
+</html>
