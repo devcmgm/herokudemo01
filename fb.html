@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <!-- saved from url=(0060)https://v4-alpha.getbootstrap.com/examples/starter-template/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -15,147 +18,275 @@
 
     <!-- Custom styles for this template -->
     <link href="/css/starter-template.css" rel="stylesheet">
-  </head>
+    <style type="text/css">
+        body {
+            color: #fff;
+            background: #5cb85c;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .form-control {
+            height: 40px;
+            box-shadow: none;
+            color: #969fa4;
+        }
+        
+        .form-control:focus {
+            border-color: #5cb85c;
+        }
+        
+        .form-control,
+        .btn {
+            border-radius: 3px;
+        }
+        
+        .signup-form {
+            width: 400px;
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+        
+        .signup-form h2 {
+            color: #5cb85c;
+            margin: 0 0 15px;
+            position: relative;
+            text-align: center;
+        }
+        
+        .signup-form h2:before,
+        .signup-form h2:after {
+            content: "";
+            height: 2px;
+            width: 30%;
+            background: #d4d4d4;
+            position: absolute;
+            top: 50%;
+            z-index: 2;
+        }
+        
+        .signup-form h2:before {
+            left: 0;
+        }
+        
+        .signup-form h2:after {
+            right: 0;
+        }
+        
+        .signup-form .hint-text {
+            color: #999;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .signup-form form {
+            color: #5cb85c;
+            border-radius: 3px;
+            margin-bottom: 15px;
+            background: #f2f3f7;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+        
+        .signup-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .signup-form input[type="checkbox"] {
+            margin-top: 3px;
+        }
+        
+        .signup-form .btn {
+            font-size: 16px;
+            font-weight: bold;
+            min-width: 140px;
+            outline: none !important;
+        }
+        
+        .signup-form .row div:first-child {
+            padding-right: 10px;
+        }
+        
+        .signup-form .row div:last-child {
+            padding-left: 10px;
+        }
+        
+        .signup-form a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        
+        .signup-form a:hover {
+            text-decoration: none;
+        }
+        
+        .signup-form form a {
+            color: #5cb85c;
+            text-decoration: none;
+        }
+        
+        .signup-form form a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
 
-  <body>
+<body>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=410591409756609"></script>
 
-<script>
-    function setCookie(name, value, days) {
-      var expires = "";
-      if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toUTCString();
-      }
-      document.cookie = name + "=" + (value || "") + expires + "; path=/";
-    }
-    
-    function getCookie(name) {
-      var nameEQ = name + "=";
-      var ca = document.cookie.split(';');
-      for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-      }
-      return null;
-    }
-</script>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '410591409756609',
-      xfbml      : true,
-      version    : 'v3.3'
-    });
-    FB.AppEvents.logPageView();
-  };
+    <script>
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
- 
-   
-</script>
-  <div>
-<nav class="navbar navbar-default" role="navigation" style="padding-left:130px;">
- <div class="container-fluid">
- <div class="navbar-header">
-      <a class="navbar-brand" href="#">MGM Vegan ToGo </a>
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+    </script>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '410591409756609',
+                xfbml: true,
+                version: 'v3.3'
+            });
+            FB.AppEvents.logPageView();
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div class="signup-form">
+
+
+        <form action="file:///C:/examples/actions/confirmation.php" method="post">
+            <div class="row">
+                <img src="/css/mgmvegantogo.png" height="200px" width="350px">
+            </div>
+            <h2>Register</h2>
+            <p class="hint-text">Create your account. It's free and only takes a minute.</p>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-6"><input type="text" class="form-control" name="first_name" placeholder="First Name" required="required"></div>
+                    <div class="col-xs-6"><input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="address" placeholder="Lunch Address" required="required">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="cellphone" placeholder="Cell Phone" required="required">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+            </div>
+            <div class="form-group">
+                <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="file:///C:/Users/zaclewis/Desktop/register.html#">Terms of Use</a> &amp; <a href="file:///C:/Users/zaclewis/Desktop/register.html#">Privacy Policy</a></label>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+            </div>
+        </form>
+        <div class="text-center">Already have an account? <a href="file:///C:/Users/zaclewis/Desktop/register.html#">Sign in</a></div>
     </div>
-       <ul class="nav navbar-nav">
-      <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
-      <li><a href="/about">About us</a></li>
-      
-    </ul>
-    <div id="login1">
-    <ul class="nav navbar-nav navbar-right">
-    <li><a href="/login">Login</a></li>
-    </ul>
+
+    <script>
+        function statusChangeCallback(response) {
+            if (response.status === 'connected') {
+                successLogin();
+            } else {
+                // The person is not logged into your app or we are unable to tell.
+                document.getElementById('status').innerHTML = 'Please log ' +
+                    'into this app.';
+            }
+        }
+
+        // This function is called when someone finishes with the Login
+        // Button.  See the onlogin handler attached to it in the sample
+        // code below.
+        function checkLoginState() {
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            });
+        }
+
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '{your-app-id}',
+                cookie: true, // enable cookies to allow the server to access 
+                // the session
+                xfbml: true, // parse social plugins on this page
+                version: '{api-version}' // The Graph API version to use for the call
+            });
+
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            });
+
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        // Here we run a very simple test of the Graph API after login is
+        // successful.  See statusChangeCallback() for when this call is made.
+        function successLogin() {
+            FB.api('/me', function(response) {
+                var access_token = FB.getAuthResponse()['accessToken'];
+                setCookie("mgmmallAccessToken" + access_token);
+                setCookie("mgmmalluserid" + response.id);
+                setCookie("mgmmallusername" + response.name);
+                window.location = "connected";
+            });
+        }
+    </script>
+
+
+
     </div>
     </div>
-</nav>
-</div>
-<br/>
-<div class="jumbotron"> <p>
-This A Demo App using Zach Facebook Prototype App MGM Vegan to Go.
-</p></div>
-<script>
-    function statusChangeCallback(response) {
-      if (response.status === 'connected') {
-        successLogin();
-      } else {
-        // The person is not logged into your app or we are unable to tell.
-        document.getElementById('status').innerHTML = 'Please log ' +
-          'into this app.';
-      }
-    }
-  
-    // This function is called when someone finishes with the Login
-    // Button.  See the onlogin handler attached to it in the sample
-    // code below.
-    function checkLoginState() {
-      FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-      });
-    }
-  
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '{your-app-id}',
-        cookie     : true,  // enable cookies to allow the server to access 
-                            // the session
-        xfbml      : true,  // parse social plugins on this page
-        version    : '{api-version}' // The Graph API version to use for the call
-      });
-  
-      FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-      });
-  
-    };
-  
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  
-    // Here we run a very simple test of the Graph API after login is
-    // successful.  See statusChangeCallback() for when this call is made.
-    function successLogin() {
-      FB.api('/me', function(response) {
-        var access_token =   FB.getAuthResponse()['accessToken'];
-        setCookie("mgmmallAccessToken" + access_token);
-        setCookie("mgmmalluserid" + response.id);
-        setCookie("mgmmallusername"+ response.name);
-        window.location = "connected";
-      });
-    }
-  </script>
-  
-   <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-  </fb:login-button>
-  
-</div>
-    </div><!-- /.container -->
+    <!-- /.container -->
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/bootstrap/jquery-3.1.1.slim.min.js" "></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="bootstrap/tether.min.js" ></script>
-    <script src="/bootstrap/bootstrap.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js "><\/script>')</script>
+    <script src="bootstrap/tether.min.js " ></script>
+    <script src="/bootstrap/bootstrap.min.js "></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="./Starter Template for Bootstrap_files/ie10-viewport-bug-workaround.js"></script>
-  
+    <script src="./Starter Template for Bootstrap_files/ie10-viewport-bug-workaround.js "></script>

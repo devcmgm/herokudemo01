@@ -1,0 +1,28 @@
+   <div>
+        <nav class="navbar navbar-default" role="navigation" style="padding-left:130px;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">MGM Vegan ToGo </a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
+                    <li><a href="/about">About us</a></li>
+
+                </ul>
+                <div id="login1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/login">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <br/>
+    <div class="jumbotron">
+        <p>
+            This A Demo App using Zach Facebook Prototype App MGM Vegan to Go.
+        </p>
+    </div>
+
+     <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
